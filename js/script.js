@@ -18,96 +18,116 @@ include('js/jquery.easing.1.3.js');
 /* Progress Bars
  ========================================================*/
 
- var bar1 = new ProgressBar.SemiCircle('#progressbar1', {
-   strokeWidth: 6,
-   color: '#FFEA82',
-   trailColor: '#eee',
-   trailWidth: 1,
-   easing: 'easeInOut',
-   duration: 1400,
-   svgStyle: null,
-   text: {
-     value: '',
-     alignToBottom: false
-   },
-   from: {color: '#FFEA82'},
-   to: {color: '#4280c9'},
-   // Set default step function for all animate calls
-   step: (state, bar1) => {
-     bar1.path.setAttribute('stroke', state.color);
-     var value = Math.round(bar1.value() * 100);
+window.onload = function() {
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 0);
+};
 
-     bar1.setText('5m29');
+var bar1 = new ProgressBar.SemiCircle('#progressbar1', {
+    strokeWidth: 6,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+        value: '',
+        alignToBottom: false
+    },
+    from: {
+        color: '#FFEA82'
+    },
+    to: {
+        color: '#4280c9'
+    },
+    // Set default step function for all animate calls
+    step: (state, bar1) => {
+        bar1.path.setAttribute('stroke', state.color);
+        var value = Math.round(bar1.value() * 100);
 
-
-     bar1.text.style.color = state.color;
-   }
- });
- bar1.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
- bar1.text.style.fontSize = '2rem';
-
- bar1.animate(0.7);  // Number from 0.0 to 1.0
-
- var bar2 = new ProgressBar.SemiCircle('#progressbar2', {
-   strokeWidth: 6,
-   color: '#FFEA82',
-   trailColor: '#eee',
-   trailWidth: 1,
-   easing: 'easeInOut',
-   duration: 1400,
-   svgStyle: null,
-   text: {
-     value: '',
-     alignToBottom: false
-   },
-   from: {color: '#FFEA82'},
-   to: {color: '#4280c9'},
-   // Set default step function for all animate calls
-   step: (state, bar2) => {
-     bar2.path.setAttribute('stroke', state.color);
-     var value = Math.round(bar1.value() * 100);
-
-     bar2.setText('1,61s');
+        bar1.setText('5m29');
 
 
-     bar2.text.style.color = state.color;
-   }
- });
- bar2.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
- bar2.text.style.fontSize = '2rem';
+        bar1.text.style.color = state.color;
+    }
+});
+bar1.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar1.text.style.fontSize = '2rem';
 
- bar2.animate(0.7);  // Number from 0.0 to 1.0
+$("#progressbar1").waypoint(function() {
+    bar1.animate(0.7);
+    bar2.animate(0.8);
+    bar3.animate(1.0);
+}, {
+    offset: "50%"
+});
 
- var bar3 = new ProgressBar.SemiCircle('#progressbar3', {
-   strokeWidth: 6,
-   color: '#FFEA82',
-   trailColor: '#eee',
-   trailWidth: 1,
-   easing: 'easeInOut',
-   duration: 1400,
-   svgStyle: null,
-   text: {
-     value: '',
-     alignToBottom: false
-   },
-   from: {color: '#FFEA82'},
-   to: {color: '#4280c9'},
-   // Set default step function for all animate calls
-   step: (state, bar3) => {
-     bar3.path.setAttribute('stroke', state.color);
-     var value = Math.round(bar1.value() * 100);
+var bar2 = new ProgressBar.SemiCircle('#progressbar2', {
+    strokeWidth: 6,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+        value: '',
+        alignToBottom: false
+    },
+    from: {
+        color: '#FFEA82'
+    },
+    to: {
+        color: '#4280c9'
+    },
+    // Set default step function for all animate calls
+    step: (state, bar2) => {
+        bar2.path.setAttribute('stroke', state.color);
+        var value = Math.round(bar1.value() * 100);
 
-     bar3.setText('100%');
+        bar2.setText('1,61s');
 
 
-     bar3.text.style.color = state.color;
-   }
- });
- bar3.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
- bar3.text.style.fontSize = '2rem';
+        bar2.text.style.color = state.color;
+    }
+});
+bar2.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar2.text.style.fontSize = '2rem';
 
- bar3.animate(1.0);  // Number from 0.0 to 1.0
 
+var bar3 = new ProgressBar.SemiCircle('#progressbar3', {
+    strokeWidth: 6,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+        value: '',
+        alignToBottom: false
+    },
+    from: {
+        color: '#FFEA82'
+    },
+    to: {
+        color: '#4280c9'
+    },
+    // Set default step function for all animate calls
+    step: (state, bar3) => {
+        bar3.path.setAttribute('stroke', state.color);
+        var value = Math.round(bar1.value() * 100);
+
+        bar3.setText('100%');
+
+
+        bar3.text.style.color = state.color;
+    }
+});
+bar3.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar3.text.style.fontSize = '2rem';
 
 
 /* ToTop
@@ -126,21 +146,21 @@ include('js/jquery.easing.1.3.js');
     }
 })(jQuery);
 
-document.querySelector('#toBottom').scrollIntoView({ 
-  behavior: 'smooth' 
+document.querySelector('#toBottom').scrollIntoView({
+    behavior: 'smooth'
 });
 
 $('a[href*="#"]:not([href="#"])').click(function() {
-  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-    if (target.length) {
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      return false;
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
     }
-  }
 });
 
 /* EqualHeights
