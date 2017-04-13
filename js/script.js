@@ -118,7 +118,7 @@ var bar3 = new ProgressBar.SemiCircle('#progressbar3', {
         bar3.path.setAttribute('stroke', state.color);
         var value = Math.round(bar1.value() * 100);
 
-        bar3.setText('100%');
+        bar3.setText('3,29 m/s');
 
 
         bar3.text.style.color = state.color;
