@@ -79,6 +79,12 @@ hr {
   text-align: left;
 }
 
+.row.grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .center hr, hr.center {
   margin-left: auto;
   margin-right: auto;
@@ -127,7 +133,12 @@ strong {
 
 .grey {
   background-color: #f3f3f3;
-  min-height: 20vh!important;
+  min-height: 50vh!important;
+}
+
+.grey img {
+  margin-top: 10px;
+  max-width: 200px;
 }
 
 .fa {
@@ -734,9 +745,8 @@ main {
   margin-top: 38px;
 }
 
-.well3 h2 {
-  color: #131313!important;
-}
+/*.well3 h2 {
+}*/
 
 @media (max-width: 479px) {
   .well3 {
@@ -754,7 +764,8 @@ main {
 }
 
 .item blockquote img {
-  max-height: 15vh;
+  max-height: 20vh;
+  border-radius: initial;
 }
 /*==================  Backgrounds  ======================*/
 .bg-primary {
