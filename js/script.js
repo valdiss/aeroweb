@@ -18,11 +18,9 @@ include('js/jquery.easing.1.3.js');
 /* Progress Bars
  ========================================================*/
 
-window.onload = function() {
-    setTimeout(function() {
-        window.scrollTo(0, 0);
-    }, 0);
-};
+ $(document).ready(function(){
+     $(this).scrollTop(0);
+ });
 
 var bar1 = new ProgressBar.SemiCircle('#progressbar1', {
     strokeWidth: 6,
