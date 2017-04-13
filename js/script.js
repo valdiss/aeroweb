@@ -126,6 +126,10 @@ include('js/jquery.easing.1.3.js');
     }
 })(jQuery);
 
+document.querySelector('#toBottom').scrollIntoView({ 
+  behavior: 'smooth' 
+});
+
 /* EqualHeights
  ========================================================*/
 ;
