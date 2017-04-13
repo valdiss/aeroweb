@@ -745,8 +745,10 @@ main {
   margin-top: 38px;
 }
 
-/*.well3 h2 {
-}*/
+.well3 h2 {
+  color: #CCC;
+  text-shadow: 3px 3px 3px #666;
+}
 
 @media (max-width: 479px) {
   .well3 {
